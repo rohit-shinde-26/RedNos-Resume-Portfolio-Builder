@@ -35,7 +35,7 @@ An AI-powered web application to create professional **resumes** and **developer
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/rednos-resume-builder.git
+git clone https://github.com/rohit-shinde-26/rednos-resume-builder.git
 ```
 
 Navigate into the project:
