@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Resume & Portfolio Builder - Create professional resumes and portfolio websites in minutes using AI-powered suggestions.">
+    <title>RedNos Forge | AI Resume & Portfolio Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/resume.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="navLogo">
+                <span class="logo-text"><span class="red-letter">R</span>ed<span class="red-letter">N</span>os <span class="logo-forge">Forge</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link active" data-page="landing">Home</a>
+                <a href="#" class="nav-link" data-page="builder">Builder</a>
+                <a href="#" class="nav-link" data-page="templates">Templates</a>
+                <a href="#" class="nav-link" data-page="portfolio-preview">Portfolio</a>
+            </div>
+            <button class="nav-cta" id="navCta" data-page="builder">Get Started</button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== LANDING PAGE ========== -->
+    <section class="page active" id="page-landing">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-bg-effects">
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+                <div class="hero-orb hero-orb-3"></div>
+                <div class="hero-grid"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-up">
+                    <span class="badge-dot"></span>
+                    AI-Powered Resume Builder
+                </div>
+                <h1 class="hero-title animate-fade-up delay-1">
+                    Build Your Dream<br>
+                    <span class="gradient-text">Resume & Portfolio</span><br>
+                    In Minutes
+                </h1>
+                <p class="hero-subtitle animate-fade-up delay-2">
+                    Transform your career details into a stunning professional resume and portfolio website. 
+                    Simply fill in your information in plain English — our AI does the rest.
+                </p>
+                <div class="hero-actions animate-fade-up delay-3">
+                    <button class="btn btn-primary btn-lg" data-page="builder">
+                        <span>Start Building</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="btn btn-ghost btn-lg" data-page="templates">
+                        <span>View Templates</span>
+                    </button>
+                </div>
+                <div class="hero-stats animate-fade-up delay-4">
+                    <div class="stat">
+                        <span class="stat-number" data-count="10000">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Resumes Created</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Templates</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="98">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual animate-fade-up delay-2">
+                <div class="hero-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-dots"><span></span><span></span><span></span></div>
+                        <span class="mockup-title">resume_preview.pdf</span>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-name">John Anderson</div>
+                        <div class="mockup-role">Senior Software Engineer</div>
+                        <div class="mockup-divider"></div>
+                        <div class="mockup-section">
+                            <div class="mockup-section-title">Experience</div>
+                            <div class="mockup-line w-90"></div>
+                            <div class="mockup-line w-75"></div>
+                            <div class="mockup-line w-85"></div>
+                        </div>
+                        <div class="mockup-section">
+                            <div class="mockup-section-title">Education</div>
+                            <div class="mockup-line w-80"></div>
+                            <div class="mockup-line w-60"></div>
+                        </div>
+                        <div class="mockup-section">
+                            <div class="mockup-section-title">Skills</div>
+                            <div class="mockup-skills">
+                                <span class="mockup-skill">React</span>
+                                <span class="mockup-skill">Node.js</span>
+                                <span class="mockup-skill">Python</span>
+                                <span class="mockup-skill">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-section" id="features">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-badge">Features</span>
+                    <h2 class="section-title">Everything You Need to<br><span class="gradient-text">Stand Out</span></h2>
+                    <p class="section-subtitle">Powerful features designed to make your resume-building experience seamless and professional.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll" style="--delay: 0">
+                        <div class="feature-icon" style="--icon-color: #6C63FF">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3>Step-by-Step Builder</h3>
+                        <p>Guided form wizard that walks you through every section of your resume effortlessly.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll" style="--delay: 1">
+                        <div class="feature-icon" style="--icon-color: #FF6584">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3>Multiple Templates</h3>
+                        <p>Choose from beautifully designed templates that suit your industry and style.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll" style="--delay: 2">
+                        <div class="feature-icon" style="--icon-color: #36D399">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3>PDF Download</h3>
+                        <p>Export your resume as a high-quality PDF ready for job applications.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll" style="--delay: 3">
+                        <div class="feature-icon" style="--icon-color: #FBBD23">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10A15 15 0 0 1 12 2z" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <h3>Portfolio Generator</h3>
+                        <p>Automatically create a stunning personal portfolio website from your resume data.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll" style="--delay: 4">
+                        <div class="feature-icon" style="--icon-color: #A78BFA">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3>AI Suggestions</h3>
+                        <p>Get intelligent suggestions to enhance your resume content and make it stand out.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll" style="--delay: 5">
+                        <div class="feature-icon" style="--icon-color: #F472B6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Build and preview your resume on any device with our fully responsive design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="how-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-badge">How It Works</span>
+                    <h2 class="section-title">Three Simple Steps to Your<br><span class="gradient-text">Perfect Resume</span></h2>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card animate-on-scroll" style="--delay: 0">
+                        <div class="step-number">01</div>
+                        <h3>Fill Your Details</h3>
+                        <p>Enter your information in our intuitive step-by-step form. Write naturally — no formatting needed.</p>
+                    </div>
+                    <div class="step-connector animate-on-scroll">
+                        <svg width="40" height="40" viewBox="0 0 40 40"><path d="M10 20h20m0 0l-6-6m6 6l-6 6" stroke="url(#arrowGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="arrowGrad" x1="10" y1="20" x2="30" y2="20"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#FF6584"/></linearGradient></defs></svg>
+                    </div>
+                    <div class="step-card animate-on-scroll" style="--delay: 1">
+                        <div class="step-number">02</div>
+                        <h3>Choose Template</h3>
+                        <p>Pick from our collection of professional templates. Preview and customize until it's perfect.</p>
+                    </div>
+                    <div class="step-connector animate-on-scroll">
+                        <svg width="40" height="40" viewBox="0 0 40 40"><path d="M10 20h20m0 0l-6-6m6 6l-6 6" stroke="url(#arrowGrad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="arrowGrad2" x1="10" y1="20" x2="30" y2="20"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#FF6584"/></linearGradient></defs></svg>
+                    </div>
+                    <div class="step-card animate-on-scroll" style="--delay: 2">
+                        <div class="step-number">03</div>
+                        <h3>Download & Share</h3>
+                        <p>Download your resume as PDF and get your portfolio website ready to share with employers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <div class="container">
+                <div class="cta-card animate-on-scroll">
+                    <div class="cta-bg-effects">
+                        <div class="cta-orb cta-orb-1"></div>
+                        <div class="cta-orb cta-orb-2"></div>
+                    </div>
+                    <h2>Ready to Build Your Future?</h2>
+                    <p>Join thousands of professionals who trust <span class="rednos-brand"><span class="red-letter">R</span>ed<span class="red-letter">N</span>os</span> Forge to create their perfect resume and portfolio.</p>
+                    <button class="btn btn-primary btn-lg" data-page="builder">
+                        <span>Start Building Now</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="logo-text"><span class="red-letter">R</span>ed<span class="red-letter">N</span>os <span class="logo-forge">Forge</span></span>
+                        <p>Build professional resumes and portfolios with the power of <span class="rednos-brand"><span class="red-letter">R</span>ed<span class="red-letter">N</span>os</span> Forge.</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#" data-page="builder">Builder</a>
+                        <a href="#" data-page="templates">Templates</a>
+                        <a href="#" data-page="portfolio-preview">Portfolio</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 <span class="rednos-brand"><span class="red-letter">R</span>ed<span class="red-letter">N</span>os</span>. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- ========== BUILDER PAGE ========== -->
+    <section class="page" id="page-builder">
+        <div class="builder-container">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-steps" id="progressSteps">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-dot">1</div>
+                        <span>Personal</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-dot">2</div>
+                        <span>Education</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-dot">3</div>
+                        <span>Skills</span>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-dot">4</div>
+                        <span>Experience</span>
+                    </div>
+                    <div class="progress-step" data-step="5">
+                        <div class="step-dot">5</div>
+                        <span>Projects</span>
+                    </div>
+                    <div class="progress-step" data-step="6">
+                        <div class="step-dot">6</div>
+                        <span>Certifications</span>
+                    </div>
+                    <div class="progress-step" data-step="7">
+                        <div class="step-dot">7</div>
+                        <span>Achievements</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Steps -->
+            <div class="form-wrapper" id="formWrapper">
+                <!-- Step 1: Personal Info -->
+                <div class="form-step active" id="step-1">
+                    <div class="form-step-header">
+                        <div class="form-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <h2>Personal Information</h2>
+                            <p>Let's start with your basic details</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="e.g., John Anderson" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title / Role *</label>
+                            <input type="text" id="jobTitle" placeholder="e.g., Senior Software Engineer">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="e.g., john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="e.g., +1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" placeholder="e.g., San Francisco, CA">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedin">LinkedIn URL</label>
+                            <input type="url" id="linkedin" placeholder="e.g., linkedin.com/in/john">
+                        </div>
+                        <div class="form-group">
+                            <label for="github">GitHub / Portfolio URL</label>
+                            <input type="url" id="github" placeholder="e.g., github.com/john">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Personal Website</label>
+                            <input type="url" id="website" placeholder="e.g., johndoe.com">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="summary">Professional Summary</label>
+                            <textarea id="summary" rows="4" placeholder="Write a brief summary about yourself, your experience, and what you're passionate about..."></textarea>
+                            <button class="ai-suggest-btn" data-field="summary" type="button">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                AI Suggest
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Education -->
+                <div class="form-step" id="step-2">
+                    <div class="form-step-header">
+                        <div class="form-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <h2>Education</h2>
+                            <p>Tell us about your educational background</p>
+                        </div>
+                    </div>
+                    <div id="educationEntries">
+                        <div class="entry-card" data-entry="education">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Degree / Qualification *</label>
+                                    <input type="text" name="edu-degree" placeholder="e.g., Bachelor of Science in Computer Science">
+                                </div>
+                                <div class="form-group">
+                                    <label>Institution *</label>
+                                    <input type="text" name="edu-institution" placeholder="e.g., MIT">
+                                </div>
+                                <div class="form-group">
+                                    <label>Start Year</label>
+                                    <input type="text" name="edu-start" placeholder="e.g., 2018">
+                                </div>
+                                <div class="form-group">
+                                    <label>End Year</label>
+                                    <input type="text" name="edu-end" placeholder="e.g., 2022 or Present">
+                                </div>
+                                <div class="form-group">
+                                    <label>GPA / Grade</label>
+                                    <input type="text" name="edu-gpa" placeholder="e.g., 3.8/4.0">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Description</label>
+                                    <textarea name="edu-description" rows="3" placeholder="Relevant coursework, honors, activities..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-entry-btn" data-target="educationEntries" data-type="education" type="button">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Add Another Education
+                    </button>
+                </div>
+
+                <!-- Step 3: Skills -->
+                <div class="form-step" id="step-3">
+                    <div class="form-step-header">
+                        <div class="form-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <h2>Skills</h2>
+                            <p>Highlight your technical and soft skills</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="technicalSkills">Technical Skills</label>
+                            <textarea id="technicalSkills" rows="3" placeholder="e.g., JavaScript, React, Node.js, Python, AWS, Docker, SQL, Git..."></textarea>
+                            <p class="form-hint">Separate skills with commas</p>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="softSkills">Soft Skills</label>
+                            <textarea id="softSkills" rows="3" placeholder="e.g., Leadership, Communication, Problem Solving, Team Collaboration..."></textarea>
+                            <p class="form-hint">Separate skills with commas</p>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="languages">Languages</label>
+                            <input type="text" id="languages" placeholder="e.g., English (Native), Spanish (Intermediate), French (Basic)">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="tools">Tools & Technologies</label>
+                            <textarea id="tools" rows="3" placeholder="e.g., VS Code, Figma, Jira, Slack, Postman, MongoDB Compass..."></textarea>
+                            <p class="form-hint">Separate with commas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Experience -->
+                <div class="form-step" id="step-4">
+                    <div class="form-step-header">
+                        <div class="form-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <h2>Work Experience</h2>
+                            <p>Share your professional experience</p>
+                        </div>
+                    </div>
+                    <div id="experienceEntries">
+                        <div class="entry-card" data-entry="experience">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Job Title *</label>
+                                    <input type="text" name="exp-title" placeholder="e.g., Senior Software Engineer">
+                                </div>
+                                <div class="form-group">
+                                    <label>Company *</label>
+                                    <input type="text" name="exp-company" placeholder="e.g., Google">
+                                </div>
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="text" name="exp-start" placeholder="e.g., Jan 2020">
+                                </div>
+                                <div class="form-group">
+                                    <label>End Date</label>
+                                    <input type="text" name="exp-end" placeholder="e.g., Present">
+                                </div>
+                                <div class="form-group">
+                                    <label>Location</label>
+                                    <input type="text" name="exp-location" placeholder="e.g., Mountain View, CA">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Description</label>
+                                    <textarea name="exp-description" rows="4" placeholder="Describe your responsibilities and achievements. Use plain English — we'll format it for you..."></textarea>
+                                    <button class="ai-suggest-btn" data-field="exp-description" type="button">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        AI Enhance
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-entry-btn" data-target="experienceEntries" data-type="experience" type="button">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Add Another Experience
+                    </button>
+                </div>
+
+                <!-- Step 5: Projects -->
+                <div class="form-step" id="step-5">
+                    <div class="form-step-header">
+                        <div class="form-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <h2>Projects</h2>
+                            <p>Showcase your best work</p>
+                        </div>
+                    </div>
+                    <div id="projectEntries">
+                        <div class="entry-card" data-entry="project">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Project Name *</label>
+                                    <input type="text" name="proj-name" placeholder="e.g., E-commerce Platform">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tech Stack</label>
+                                    <input type="text" name="proj-tech" placeholder="e.g., React, Node.js, MongoDB">
+                                </div>
+                                <div class="form-group">
+                                    <label>Project URL</label>
+                                    <input type="url" name="proj-url" placeholder="e.g., github.com/john/project">
+                                </div>
+                                <div class="form-group">
+                                    <label>Live Demo URL</label>
+                                    <input type="url" name="proj-demo" placeholder="e.g., myproject.com">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Description</label>
+                                    <textarea name="proj-description" rows="4" placeholder="Describe the project, its purpose, and your role..."></textarea>
+                                    <button class="ai-suggest-btn" data-field="proj-description" type="button">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        AI Enhance
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-entry-btn" data-target="projectEntries" data-type="project" type="button">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Add Another Project
+                    </button>
+                </div>
+
+                <!-- Step 6: Certifications -->
+                <div class="form-step" id="step-6">
+                    <div class="form-step-header">
+                        <div class="form-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="2"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <h2>Certifications</h2>
+                            <p>List your professional certifications</p>
+                        </div>
+                    </div>
+                    <div id="certEntries">
+                        <div class="entry-card" data-entry="cert">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Certification Name *</label>
+                                    <input type="text" name="cert-name" placeholder="e.g., AWS Solutions Architect">
+                                </div>
+                                <div class="form-group">
+                                    <label>Issuing Organization</label>
+                                    <input type="text" name="cert-org" placeholder="e.g., Amazon Web Services">
+                                </div>
+                                <div class="form-group">
+                                    <label>Date Obtained</label>
+                                    <input type="text" name="cert-date" placeholder="e.g., March 2023">
+                                </div>
+                                <div class="form-group">
+                                    <label>Credential URL</label>
+                                    <input type="url" name="cert-url" placeholder="e.g., credential link">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-entry-btn" data-target="certEntries" data-type="cert" type="button">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Add Another Certification
+                    </button>
+                </div>
+
+                <!-- Step 7: Achievements -->
+                <div class="form-step" id="step-7">
+                    <div class="form-step-header">
+                        <div class="form-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M6 9a6 6 0 0 0 12 0M7 21h10M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <h2>Achievements</h2>
+                            <p>Highlight your key accomplishments</p>
+                        </div>
+                    </div>
+                    <div id="achievementEntries">
+                        <div class="entry-card" data-entry="achievement">
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label>Achievement *</label>
+                                    <input type="text" name="ach-title" placeholder="e.g., Won 1st place in National Hackathon 2023">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Description (optional)</label>
+                                    <textarea name="ach-description" rows="2" placeholder="Brief description of the achievement..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-entry-btn" data-target="achievementEntries" data-type="achievement" type="button">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Add Another Achievement
+                    </button>
+                </div>
+            </div>
+
+            <!-- Form Navigation -->
+            <div class="form-navigation">
+                <button class="btn btn-ghost" id="prevBtn" type="button" disabled>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 8H4m0 0l4-4M4 8l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Previous
+                </button>
+                <button class="btn btn-primary" id="nextBtn" type="button">
+                    Next Step
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8h8m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="btn btn-primary btn-generate" id="generateBtn" type="button" style="display:none">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Generate Resume
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TEMPLATES PAGE ========== -->
+    <section class="page" id="page-templates">
+        <div class="container">
+            <div class="section-header" style="padding-top: 120px;">
+                <span class="section-badge">Templates</span>
+                <h2 class="section-title">Choose Your<br><span class="gradient-text">Perfect Template</span></h2>
+                <p class="section-subtitle">Select a template that matches your style and industry</p>
+            </div>
+            <div class="templates-grid" id="templatesGrid">
+                <div class="template-card active" data-template="modern">
+                    <div class="template-preview template-modern-preview">
+                        <div class="tp-header-bar"></div>
+                        <div class="tp-sidebar">
+                            <div class="tp-avatar"></div>
+                            <div class="tp-line short"></div>
+                            <div class="tp-line"></div>
+                            <div class="tp-line short"></div>
+                        </div>
+                        <div class="tp-main">
+                            <div class="tp-line wide"></div>
+                            <div class="tp-line"></div>
+                            <div class="tp-line short"></div>
+                            <div class="tp-line"></div>
+                            <div class="tp-line wide"></div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Modern</h3>
+                        <p>Clean two-column layout with sidebar</p>
+                        <span class="template-badge selected-badge">Selected</span>
+                    </div>
+                </div>
+                <div class="template-card" data-template="classic">
+                    <div class="template-preview template-classic-preview">
+                        <div class="tp-classic-header">
+                            <div class="tp-line wide center"></div>
+                            <div class="tp-line center"></div>
+                        </div>
+                        <div class="tp-classic-body">
+                            <div class="tp-line wide"></div>
+                            <div class="tp-line"></div>
+                            <div class="tp-line short"></div>
+                            <div class="tp-spacer"></div>
+                            <div class="tp-line wide"></div>
+                            <div class="tp-line"></div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Classic</h3>
+                        <p>Traditional single-column design</p>
+                        <span class="template-badge">Select</span>
+                    </div>
+                </div>
+                <div class="template-card" data-template="minimal">
+                    <div class="template-preview template-minimal-preview">
+                        <div class="tp-minimal-header">
+                            <div class="tp-line wide"></div>
+                            <div class="tp-line short"></div>
+                        </div>
+                        <div class="tp-minimal-divider"></div>
+                        <div class="tp-minimal-body">
+                            <div class="tp-line"></div>
+                            <div class="tp-line short"></div>
+                            <div class="tp-spacer"></div>
+                            <div class="tp-line"></div>
+                            <div class="tp-line wide"></div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Minimal</h3>
+                        <p>Simple and elegant with clean lines</p>
+                        <span class="template-badge">Select</span>
+                    </div>
+                </div>
+                <div class="template-card" data-template="creative">
+                    <div class="template-preview template-creative-preview">
+                        <div class="tp-creative-accent"></div>
+                        <div class="tp-creative-header">
+                            <div class="tp-line wide"></div>
+                            <div class="tp-line"></div>
+                        </div>
+                        <div class="tp-creative-body">
+                            <div class="tp-creative-cols">
+                                <div class="tp-col">
+                                    <div class="tp-line"></div>
+                                    <div class="tp-line short"></div>
+                                </div>
+                                <div class="tp-col">
+                                    <div class="tp-line"></div>
+                                    <div class="tp-line wide"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Creative</h3>
+                        <p>Bold design with accent colors</p>
+                        <span class="template-badge">Select</span>
+                    </div>
+                </div>
+            </div>
+            <div class="template-actions">
+                <button class="btn btn-primary btn-lg" id="applyTemplateBtn">
+                    Apply Template & Preview
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RESUME PREVIEW PAGE ========== -->
+    <section class="page" id="page-resume">
+        <div class="resume-page-container">
+            <div class="resume-toolbar">
+                <div class="toolbar-left">
+                    <h2>Resume Preview</h2>
+                    <select id="templateSelector" class="template-select">
+                        <option value="modern">Modern Template</option>
+                        <option value="classic">Classic Template</option>
+                        <option value="minimal">Minimal Template</option>
+                        <option value="creative">Creative Template</option>
+                    </select>
+                </div>
+                <div class="toolbar-right">
+                    <button class="btn btn-ghost" id="editResumeBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M11.33 1.33a2 2 0 0 1 2.83 2.83L5 13.33l-3.67.84.83-3.67 9.17-9.17z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Edit
+                    </button>
+                    <button class="btn btn-ghost" id="aiSuggestBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        AI Suggestions
+                    </button>
+                    <button class="btn btn-primary" id="downloadPdfBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14 10v3.33a1.33 1.33 0 0 1-1.33 1.34H3.33A1.33 1.33 0 0 1 2 13.33V10M5.33 6.67L8 9.33l2.67-2.66M8 9.33V1.33" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Download PDF
+                    </button>
+                    <button class="btn btn-secondary" data-page="portfolio-preview">
+                        View Portfolio
+                    </button>
+                </div>
+            </div>
+
+            <!-- AI Suggestions Panel -->
+            <div class="ai-panel" id="aiPanel">
+                <div class="ai-panel-header">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1l2 4.5L16.5 7.5 12.5 9.5 10 14 7.5 9.5 3.5 7.5 8 5.5 10 1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        AI Suggestions
+                    </h3>
+                    <button class="ai-panel-close" id="aiPanelClose">&times;</button>
+                </div>
+                <div class="ai-panel-body" id="aiPanelBody">
+                    <div class="ai-suggestion">
+                        <div class="ai-suggestion-icon">💡</div>
+                        <div>
+                            <h4>Enhance Summary</h4>
+                            <p>Your summary could be more impactful. Consider adding specific metrics and accomplishments.</p>
+                            <button class="btn btn-sm btn-ghost" onclick="applySuggestion('summary')">Apply</button>
+                        </div>
+                    </div>
+                    <div class="ai-suggestion">
+                        <div class="ai-suggestion-icon">🎯</div>
+                        <div>
+                            <h4>Action Verbs</h4>
+                            <p>Start experience bullet points with strong action verbs like "Spearheaded", "Architected", "Delivered".</p>
+                            <button class="btn btn-sm btn-ghost" onclick="applySuggestion('verbs')">Apply</button>
+                        </div>
+                    </div>
+                    <div class="ai-suggestion">
+                        <div class="ai-suggestion-icon">📊</div>
+                        <div>
+                            <h4>Add Metrics</h4>
+                            <p>Quantify your achievements. Instead of "improved performance", say "improved performance by 40%".</p>
+                            <button class="btn btn-sm btn-ghost" onclick="applySuggestion('metrics')">Apply</button>
+                        </div>
+                    </div>
+                    <div class="ai-suggestion">
+                        <div class="ai-suggestion-icon">🔗</div>
+                        <div>
+                            <h4>Keywords Optimization</h4>
+                            <p>Add industry-relevant keywords to help your resume pass ATS systems.</p>
+                            <button class="btn btn-sm btn-ghost" onclick="applySuggestion('keywords')">Apply</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" id="regenerateBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 4v4h4M15 12V8h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.51 5.99A6 6 0 0 0 3.34 3.34L1 5.5M15 10.5l-2.34 2.16A6 6 0 0 1 2.49 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Regenerate with AI
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resume Content -->
+            <div class="resume-preview-wrapper">
+                <div class="resume-paper" id="resumePaper">
+                    <!-- Resume content will be generated by JavaScript -->
+                    <div class="resume-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="12" y="6" width="40" height="52" rx="4" stroke="#6C63FF" stroke-width="2"/><path d="M22 20h20M22 28h20M22 36h14" stroke="#6C63FF" stroke-width="2" stroke-linecap="round"/></svg>
+                        <h3>No Resume Generated Yet</h3>
+                        <p>Fill out the builder form to generate your resume</p>
+                        <button class="btn btn-primary" data-page="builder">Go to Builder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PORTFOLIO PREVIEW PAGE ========== -->
+    <section class="page" id="page-portfolio-preview">
+        <div class="portfolio-toolbar">
+            <div class="toolbar-left">
+                <h2>Portfolio Preview</h2>
+            </div>
+            <div class="toolbar-right">
+                <button class="btn btn-ghost" data-page="resume">
+                    View Resume
+                </button>
+                <button class="btn btn-primary" id="openPortfolioBtn">
+                    Open Full Portfolio
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 8.67V12.67A1.33 1.33 0 0 1 10.67 14H3.33A1.33 1.33 0 0 1 2 12.67V5.33A1.33 1.33 0 0 1 3.33 4h4M10 2h4v4M6.67 9.33L14 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="portfolio-frame-wrapper">
+            <div class="portfolio-content" id="portfolioContent">
+                <!-- Portfolio content will be generated by JavaScript -->
+                <div class="resume-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="20" r="10" stroke="#6C63FF" stroke-width="2"/><path d="M12 52c0-11.05 8.95-20 20-20s20 8.95 20 20" stroke="#6C63FF" stroke-width="2" stroke-linecap="round"/></svg>
+                    <h3>No Portfolio Generated Yet</h3>
+                    <p>Fill out the builder form to generate your portfolio</p>
+                    <button class="btn btn-primary" data-page="builder">Go to Builder</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Generating your resume...</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/resume.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/pdf.js"></script>
+    <script src="js/ai-suggestions.js"></script>
+</body>
+</html>
